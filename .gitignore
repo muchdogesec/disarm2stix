@@ -1,0 +1,17 @@
+# do not include the framework XLSX
+DISARM_FRAMEWORKS_MASTER.xlsx
+~$DISARM_FRAMEWORKS_MASTER.xlsx
+
+# only include stix bundle in repo
+stix2_objects/
+
+# ignore venv described in the readme
+
+disarm2stix_venv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.idea/
+.DS_Store
