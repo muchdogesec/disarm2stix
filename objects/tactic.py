@@ -7,11 +7,24 @@ from datetime import datetime
 import objects.marking_definition
 from objects import identity, marking_definition
 
-valid_tactics = ["plan-strategy", "plan-objectives", "microtarget", "develop-content",
-                 "select-channels-and-affordances", "conduct-pump-priming", "deliver-content",
-                 "drive-offline-activity", "persist-in-the-information-environment", "assess-effectiveness",
-                 "target-audience-analysis", "develop-narratives", "establish-social-assets", "establish-legitimacy",
-                 "maximize-exposure", "drive-online-harms", "maximise-exposure", "establish-assets"]
+valid_tactics = [
+        "plan-strategy", #TA01
+        "plan-objectives", #TA02
+        "microtarget", #TA05
+        "develop-content", #TA06
+        "select-channels-and-affordances", #TA07
+        "conduct-pump-priming", #TA08
+        "deliver-content", #TA09
+        "drive-offline-activity", #TA010
+        "persist-in-the-information-environment", #TA11
+        "assess-effectiveness", #TA12
+        "target-audience-analysis", #TA13
+        "develop-narratives", #TA14
+        "establish-assets", #TA15
+        "establish-legitimacy", #TA16
+        "maximise-exposure", #TA17
+        "drive-online-harms" #TA18
+    ]
 
 @CustomObject('x-mitre-tactic', [
     ('name', properties.StringProperty(required=True)),
