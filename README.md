@@ -77,6 +77,10 @@ This conversion (especially the STIX custom objects `x-`) is heavily inspired by
 
 Note, this code only considers the DISARM Red Framework at present.
 
+You can see the high level structure of how the STIX objects are linked together here:
+
+https://miro.com/app/board/uXjVKpP-IGw=/?share_link_id=561813119363
+
 ### Marking Definition / Identity
 
 These are hardcoded and imported from our [stix4doge repository](https://github.com/muchdogesec/stix4doge). Specifically these objects;
@@ -269,6 +273,7 @@ For reference, here are the available versions and corresponding .xlsx files to 
 * 1.2 (2023-08-10): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/382df9325af25e650667f81a3ff0575b2307b949/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx 
 * 1.3 (2023-09-13): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/62680c33d5cd1fabbc5aec4fa6390a0180ed3ea2/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
 * 1.4 (2024-03-13): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/f1ac3b04ee17388d9ccc1ada5ad4ed1160f01fe0/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
+* 1.5 (2024-03-13): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/40151ce8a570f365d0e5903ab191ea58f0309af3/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
 
 ## Useful supporting tools
 
