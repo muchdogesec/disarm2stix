@@ -2,13 +2,13 @@
 
 A command line tool that turns the DISARM framework into STIX 2.1 Objects.
 
-## Before you get started
+## Before you begin
 
-If you do not want to backfill, maintain, or support your own DISARM STIX objects check out CTI Butler which provides a fully manage database of these objects and more!
-
-https://www.ctibutler.com/
+We host a full web API that includes all objects created by location2stix, [CTIButler](https://www.ctibutler.com/).
 
 ## Overview
+
+![](docs/disarm2stix.png)
 
 The [DISARM Framework](https://www.disarm.foundation/framework) in parts aims to provide a single knowledge-base for disinformation classifications.
 
