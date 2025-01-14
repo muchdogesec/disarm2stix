@@ -274,6 +274,7 @@ For reference, here are the available versions and corresponding .xlsx files to 
 * 1.3 (2023-09-13): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/62680c33d5cd1fabbc5aec4fa6390a0180ed3ea2/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
 * 1.4 (2024-03-13): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/f1ac3b04ee17388d9ccc1ada5ad4ed1160f01fe0/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
 * 1.5 (2024-03-13): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/40151ce8a570f365d0e5903ab191ea58f0309af3/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
+* 1.6 (2024-11-22): https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/084362afe5d1faa8b89f75250b795095df25c476/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
 
 ## Useful supporting tools
 
