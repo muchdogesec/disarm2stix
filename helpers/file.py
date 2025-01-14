@@ -56,7 +56,7 @@ def write_bundle(bundle):
 def download_file_from_url():
     file_name = "DISARM_FRAMEWORKS_MASTER.xlsx"
     # latest xlsz_url = https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/main/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx but check the version of the framework first if using this URL!
-    xlsx_url = "https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/main/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx"
+    xlsx_url = "https://raw.githubusercontent.com/DISARMFoundation/DISARMframeworks/084362afe5d1faa8b89f75250b795095df25c476/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx"
     response = requests.get(xlsx_url)
     if response.status_code == 200:
         # Open the file for writing in binary mode
