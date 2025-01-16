@@ -33,13 +33,8 @@ def generate_disarm_stix():
     subtechnique_relationships = relationship.make_disarm_subtechnique_relationships(techniques,identity_id, marking_id,date=file_data[1])
     navigator_matrix = matrix.make_disarm_matrix(tactics, identity_id, marking_id, date=file_data[1])
     technique.make_disarm_techniques(data, identity_id, marking_id, remove_external=True,date=file_data[1])
-    stix_objects = []
-    stix_objects.append(tactics)
-    stix_objects.append(techniques)
-    stix_objects.append(subtechnique_relationships)
-    stix_objects.append(disarm_identity)
-    stix_objects.append(disarm_marking_definition)
-    stix_objects.append(navigator_matrix)
+
+
     stix_objects = tactics + techniques + subtechnique_relationships + disarm_identity+ disarm_marking_definition+navigator_matrix
     helpers.file.write_bundle(stix_objects)
     bundle.make_stix_bundle(stix_objects)
