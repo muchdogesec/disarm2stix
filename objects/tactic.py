@@ -38,8 +38,9 @@ class Tactic(object):
             raise ValueError("'%s' is not a recognized DISARM Tactic." % x_mitre_shortname)
 
 def make_disarm_tactics(data, identity_id, marking_id, date):
-    tactics = []
+    tactics: list[tuple[int, Tactic]] = []
     for t in data["tactics"].values.tolist():
+        rank = t[4]
         tactic = Tactic(
             id = "x-mitre-tactic--{}".format(uuid.uuid5(namespace=UUID("8700e156-6ce9-5090-8589-f9d0aef7bdb7"),name=f"{t[0]}")),
             name=f"{t[1]}",
@@ -58,6 +59,7 @@ def make_disarm_tactics(data, identity_id, marking_id, date):
             created_by_ref=identity_id
         )
         utils.fs.add(tactic)
-        tactics.append(tactic)
+        tactics.append([rank, tactic])
 
-    return tactics
+    # sort by rank
+    return [x[1] for x in sorted(tactics, key=lambda x: x[0])]
