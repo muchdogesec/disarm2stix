@@ -88,6 +88,46 @@ These are hardcoded and imported from our [stix4doge repository](https://github.
 * Marking Definition: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/marking-definition/disarm2stix.json
 * Identity: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/disarm2stix.json
 
+### Collection
+
+Lists all objects in the bundle (except itself);
+
+```json
+{
+    "type": "x-mitre-collection",
+    "spec_version": "2.1",
+    "id": "x-mitre-collection--<UUID V5>",
+    "created_by_ref": "<IMPORTED IDENTITY OBJECT>",
+    "created": "<DATE IN DISARM_VERSION FILE>",
+    "modified": "<DATE IN DISARM_VERSION FILE>",
+    "name": "DISARM Red Framework",
+    "description": "Incident creator TTPs.",
+    "x_mitre_contents": [
+        {
+          "object_ref": "OBJECT ID",
+          "object_modified": "OBJECT MODIFIED"
+        },
+        {
+          "object_ref": "OBJECT ID",
+          "object_modified": "OBJECT MODIFIED"
+        }
+    ],
+    "external_references": [
+        {
+            "source_name": "DISARM",
+            "url": "https://www.disarm.foundation/",
+            "external_id": "DISARM"
+        }
+    ],
+    "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+        "<IMPORTED MARKING DEFINITION OBJECT>"
+    ]
+}
+```
+
+To generate the id, a UUIDv5 is generated using the namespace `8700e156-6ce9-5090-8589-f9d0aef7bdb7` and `DISARM Red Framework` which will always create the UUID `03e1a731-175d-5181-ba28-8be2e2159da9` = `x-mitre-collection--03e1a731-175d-5181-ba28-8be2e2159da9`
+
 ### Matrix
 
 ```json
