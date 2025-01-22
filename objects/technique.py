@@ -1,8 +1,6 @@
-from stix2 import AttackPattern, properties, ExternalReference
-import objects.marking_definition
+from stix2 import AttackPattern
+from objects.common import NAMESPACE
 import pandas as pd
-from objects import identity, marking_definition
-from uuid import UUID
 import uuid
 from helpers import utils
 from datetime import datetime
@@ -39,7 +37,7 @@ def make_disarm_techniques(data, identity_id, marking_id, date:str, remove_exter
 
         technique = AttackPattern(
             id="attack-pattern--{}".format(
-                uuid.uuid5(namespace=UUID("8700e156-6ce9-5090-8589-f9d0aef7bdb7"), name=f"{t[0]}")),
+                uuid.uuid5(namespace=NAMESPACE, name=f"{t[0]}")),
             name=f"{t[1]}",
             description=f"{t[4]}",
             external_references=external_references,

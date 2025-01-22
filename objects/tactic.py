@@ -1,11 +1,9 @@
 import uuid
 from stix2 import CustomObject, properties, ExternalReference
-from uuid import UUID
 from helpers import utils
 from datetime import datetime
 
-import objects.marking_definition
-from objects import identity, marking_definition
+from objects.common import NAMESPACE
 
 valid_tactics = [
         "plan-strategy", #TA01
@@ -43,7 +41,7 @@ def make_disarm_tactics(data, identity_id, marking_id, date):
     for t in data["tactics"].values.tolist():
         rank = t[4]
         tactic = Tactic(
-            id = "x-mitre-tactic--{}".format(uuid.uuid5(namespace=UUID("8700e156-6ce9-5090-8589-f9d0aef7bdb7"),name=f"{t[0]}")),
+            id = "x-mitre-tactic--{}".format(uuid.uuid5(namespace=NAMESPACE,name=f"{t[0]}")),
             name=f"{t[1]}",
             description=f"{t[5]}",
             x_mitre_shortname=f'{t[1].lower().replace(" ", "-")}',

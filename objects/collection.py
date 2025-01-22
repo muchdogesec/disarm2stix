@@ -1,10 +1,10 @@
 from collections import OrderedDict
-from stix2 import CustomObject, properties, ExternalReference
+from stix2 import CustomObject, properties
 from stix2.v21.common import _STIXBase21
 from datetime import datetime
 import uuid
-from uuid import UUID
 from helpers import utils
+from objects.common import NAMESPACE
 
 class MitreContent(_STIXBase21):
     """
@@ -28,7 +28,7 @@ def make_disarm_collection(objects, identity_id, marking_id, date):
     description = 'Incident creator TTPs.'
     # tactic_refs = [i.id for i in tactics]
     mitre_collection = Collection(
-        id=f"x-mitre-collection--{uuid.uuid5(namespace=UUID('8700e156-6ce9-5090-8589-f9d0aef7bdb7'), name='DISARM Red Framework')}",
+        id=f"x-mitre-collection--{uuid.uuid5(namespace=NAMESPACE, name='DISARM Red Framework')}",
         name=name,
         description=description,
         external_references=[
