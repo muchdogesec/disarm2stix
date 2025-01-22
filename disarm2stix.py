@@ -1,5 +1,5 @@
 import helpers
-from objects import tactic, technique, matrix, relationship, identity, marking_definition, bundle
+from objects import tactic, technique, matrix, relationship, identity, marking_definition, bundle, collection
 from helpers import xlsx, file
 import os
 import shutil
@@ -32,10 +32,11 @@ def generate_disarm_stix():
     techniques = technique.make_disarm_techniques(data, identity_id, marking_id,file_data[1])
     subtechnique_relationships = relationship.make_disarm_subtechnique_relationships(techniques,identity_id, marking_id,date=file_data[1])
     navigator_matrix = matrix.make_disarm_matrix(tactics, identity_id, marking_id, date=file_data[1])
-    technique.make_disarm_techniques(data, identity_id, marking_id, remove_external=True,date=file_data[1])
+    technique.make_disarm_techniques(data, identity_id, marking_id, remove_external=True, date=file_data[1])
 
 
     stix_objects = tactics + techniques + subtechnique_relationships + disarm_identity+ disarm_marking_definition+navigator_matrix
+    stix_objects += collection.make_disarm_matrix(stix_objects, identity_id, marking_id, date=file_data[1])
     helpers.file.write_bundle(stix_objects)
     bundle.make_stix_bundle(stix_objects)
     helpers.file.delete_file_from_folder()
