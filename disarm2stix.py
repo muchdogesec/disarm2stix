@@ -36,7 +36,7 @@ def generate_disarm_stix():
 
 
     stix_objects = tactics + techniques + subtechnique_relationships + disarm_identity+ disarm_marking_definition+navigator_matrix
-    stix_objects += collection.make_disarm_matrix(stix_objects, identity_id, marking_id, date=file_data[1])
+    stix_objects += collection.make_disarm_collection(stix_objects, identity_id, marking_id, date=file_data[1])
     helpers.file.write_bundle(stix_objects)
     bundle.make_stix_bundle(stix_objects)
     helpers.file.delete_file_from_folder()

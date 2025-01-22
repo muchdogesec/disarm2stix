@@ -30,7 +30,8 @@ valid_tactics = [
     ('name', properties.StringProperty(required=True)),
     ('description', properties.StringProperty(required=True)),
     ('x_mitre_shortname', properties.StringProperty(required=True)),
-    ('external_references', properties.ListProperty(ExternalReference))
+    ('x_mitre_rank', properties.IntegerProperty(required=True)),
+    ('external_references', properties.ListProperty(ExternalReference)),
 ])
 class Tactic(object):
     def __init__(self, x_mitre_shortname=None, **kwargs):
@@ -46,6 +47,7 @@ def make_disarm_tactics(data, identity_id, marking_id, date):
             name=f"{t[1]}",
             description=f"{t[5]}",
             x_mitre_shortname=f'{t[1].lower().replace(" ", "-")}',
+            x_mitre_rank=rank,
             created="2020-01-01T00:00:00.000Z",
             modified=datetime.strptime(date, '%Y-%m-%d'),
             external_references=[
@@ -59,7 +61,7 @@ def make_disarm_tactics(data, identity_id, marking_id, date):
             created_by_ref=identity_id
         )
         utils.fs.add(tactic)
-        tactics.append([rank, tactic])
+        tactics.append(tactic)
 
     # sort by rank
-    return [x[1] for x in sorted(tactics, key=lambda x: x[0])]
+    return sorted(tactics, key=lambda x: x.x_mitre_rank)

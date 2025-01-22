@@ -23,11 +23,11 @@ class MitreContent(_STIXBase21):
 class Collection:
     pass
 
-def make_disarm_matrix(objects, identity_id, marking_id, date):
+def make_disarm_collection(objects, identity_id, marking_id, date):
     name = 'DISARM Red Framework'
     description = 'Incident creator TTPs.'
     # tactic_refs = [i.id for i in tactics]
-    matrix = Collection(
+    mitre_collection = Collection(
         id=f"x-mitre-collection--{uuid.uuid5(namespace=UUID('8700e156-6ce9-5090-8589-f9d0aef7bdb7'), name='DISARM Red Framework')}",
         name=name,
         description=description,
@@ -45,5 +45,5 @@ def make_disarm_matrix(objects, identity_id, marking_id, date):
         created="2020-01-01T00:00:00.000Z",
         modified=datetime.strptime(date, '%Y-%m-%d'),
     )
-    utils.fs.add(matrix)
-    return [matrix]
+    utils.fs.add(mitre_collection)
+    return [mitre_collection]
