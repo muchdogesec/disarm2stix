@@ -1,9 +1,10 @@
 from stix2 import Bundle
 import uuid
 import json
-from uuid import UUID
 from helpers import file, utils
 import hashlib
+
+from objects.common import NAMESPACE
 
 def generate_md5_from_list(stix_objects: list) -> str:
 
@@ -22,7 +23,7 @@ def serialized_json(stix_objects):
 def make_stix_bundle(stix_objects):
     id = "bundle--{}".format(
         uuid.uuid5(
-            namespace=UUID('8700e156-6ce9-5090-8589-f9d0aef7bdb7'),
+            namespace=NAMESPACE,
             name=generate_md5_from_list(stix_objects=serialized_json(stix_objects))
         )
     )
