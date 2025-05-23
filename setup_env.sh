@@ -2,7 +2,7 @@
 
 # Clone the repo if not already present
 if [ ! -d "disarm2stix" ]; then
-  git clone https://github.com/muchdogesec/disarm2stix
+  git clone https://github.com/infoepi/disarm2stix
 fi
 
 cd disarm2stix
