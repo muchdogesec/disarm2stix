@@ -1,4 +1,3 @@
-import helpers
 from objects import tactic, technique, matrix, relationship, identity, marking_definition, bundle, collection
 from helpers import xlsx, file
 import os
@@ -7,6 +6,8 @@ import shutil
 
 def clean_filesystem():
     file_system = "stix2_objects"
+    if not os.path.exists(file_system):
+        return
     for filename in os.listdir(file_system):
         file_path = os.path.join(file_system, filename)
         try:
@@ -18,8 +19,8 @@ def clean_filesystem():
            print(f"Failed to delete {file_path}. Reason: {e}")
 
 def generate_disarm_stix():
-    helpers.file.download_file_from_url()
-    data = helpers.xlsx.load_excel_data()
+    file.download_file_from_url()
+    data = xlsx.load_excel_data()
     clean_filesystem()
     file_data = file.read_file("DISARM_VERSION")
 
@@ -37,9 +38,9 @@ def generate_disarm_stix():
 
     stix_objects = tactics + techniques + subtechnique_relationships + disarm_identity+ disarm_marking_definition+navigator_matrix
     stix_objects += collection.make_disarm_collection(stix_objects, identity_id, marking_id, date=file_data[1])
-    helpers.file.write_bundle(stix_objects)
+    file.write_bundle(stix_objects)
     bundle.make_stix_bundle(stix_objects)
-    helpers.file.delete_file_from_folder()
+    file.delete_file_from_folder()
 
 
 if __name__ == "__main__":
