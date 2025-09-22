@@ -1,6 +1,6 @@
-import helpers
-from objects import tactic, technique, matrix, relationship, identity, marking_definition, bundle, collection
-from helpers import xlsx, file
+from src import helpers
+from src import tactic, technique, matrix, relationship, identity, marking_definition, bundle, collection
+from src.helpers import xlsx, file
 import os
 import shutil
 
