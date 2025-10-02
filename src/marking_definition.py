@@ -1,6 +1,7 @@
 import json
 from stix2 import parse
-from helpers import utils
+from src.helpers import utils
+
 
 def make_disarm_marking_definition(identity_id=None):
 
@@ -17,5 +18,6 @@ def make_disarm_marking_definition(identity_id=None):
 
 
 def custom_md():
-    return ["marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
-            ]+[make_disarm_marking_definition()[0].get("id")]
+    return ["marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"] + [
+        make_disarm_marking_definition()[0].get("id")
+    ]
