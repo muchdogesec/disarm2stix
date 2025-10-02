@@ -86,7 +86,7 @@ https://miro.com/app/board/uXjVKpP-IGw=/?share_link_id=561813119363
 These are hardcoded and imported from our [stix4doge repository](https://github.com/muchdogesec/stix4doge). Specifically these objects;
 
 * Marking Definition: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/marking-definition/disarm2stix.json
-* Identity: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/disarm2stix.json
+* Identity: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/dogesec.json
 
 ### Collection
 
