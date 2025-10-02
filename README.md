@@ -86,7 +86,7 @@ https://miro.com/app/board/uXjVKpP-IGw=/?share_link_id=561813119363
 These are hardcoded and imported from our [stix4doge repository](https://github.com/muchdogesec/stix4doge). Specifically these objects;
 
 * Marking Definition: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/marking-definition/disarm2stix.json
-* Identity: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/disarm2stix.json
+* Identity: https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/dogesec.json
 
 ### Collection
 
@@ -304,7 +304,7 @@ DISARM is versioned, but it is not easy to determine versions in a programmatic 
 
 As such the `DISARM_VERSION` needs to be manually updated with both the version and `modified` time. The `created` time is hard coded as `2020-01-01T00:00:00.000Z` for all objects.
 
-It is possible to grab specific version URL of the .xlsx file (using historic commits) and run this script using them. To do this, go into `helpers/file.py` and modify the variable `xlsx_url`.
+It is possible to grab specific version URL of the .xlsx file (using historic commits) and run this script using them. To do this, go into `src/helpers/file.py` and modify the variable `xlsx_url`.
 
 https://github.com/DISARMFoundation/DISARMframeworks/commits/main/DISARM_MASTER_DATA/DISARM_FRAMEWORKS_MASTER.xlsx
 
