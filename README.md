@@ -4,11 +4,15 @@ A command line tool that turns the DISARM framework into STIX 2.1 Objects.
 
 ## Before you begin
 
-We host a full web API that includes all objects created by location2stix, [CTIButler](https://www.ctibutler.com/).
+![](docs/ctibutler.png)
+
+We host a full web API that includes all objects created by disarm2stix, [CTIButler](https://www.ctibutler.com/).
 
 ## Overview
 
-![](docs/disarm2stix.png)
+![](docs/disarm2stix.jpg)
+
+[Source](https://miro.com/app/board/uXjVKpP-IGw=/?share_link_id=561813119363)
 
 The [DISARM Framework](https://www.disarm.foundation/framework) in parts aims to provide a single knowledge-base for disinformation classifications.
 
@@ -77,10 +81,6 @@ This conversion (especially the STIX custom objects `x-`) is heavily inspired by
 
 Note, this code only considers the DISARM Red Framework at present.
 
-You can see the high level structure of how the STIX objects are linked together here:
-
-https://miro.com/app/board/uXjVKpP-IGw=/?share_link_id=561813119363
-
 ### Marking Definition / Identity
 
 These are hardcoded and imported from our [stix4doge repository](https://github.com/muchdogesec/stix4doge). Specifically these objects;
@@ -97,7 +97,7 @@ Lists all objects in the bundle (except itself);
     "type": "x-mitre-collection",
     "spec_version": "2.1",
     "id": "x-mitre-collection--<UUID V5>",
-    "created_by_ref": "<IMPORTED IDENTITY OBJECT>",
+    "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
     "created": "<DATE IN DISARM_VERSION FILE>",
     "modified": "<DATE IN DISARM_VERSION FILE>",
     "name": "DISARM Red Framework",
@@ -121,7 +121,7 @@ Lists all objects in the bundle (except itself);
     ],
     "object_marking_refs": [
         "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-        "<IMPORTED MARKING DEFINITION OBJECT>"
+        "marking-definition--8700e156-6ce9-5090-8589-f9d0aef7bdb7"
     ]
 }
 ```
@@ -135,7 +135,7 @@ To generate the id, a UUIDv5 is generated using the namespace `8700e156-6ce9-509
     "type": "x-mitre-matrix",
     "spec_version": "2.1",
     "id": "x-mitre-matrix--<UUID V5>",
-    "created_by_ref": "<IMPORTED IDENTITY OBJECT>",
+    "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
     "created": "<DATE IN DISARM_VERSION FILE>",
     "modified": "<DATE IN DISARM_VERSION FILE>",
     "name": "DISARM Red Framework",
@@ -152,7 +152,7 @@ To generate the id, a UUIDv5 is generated using the namespace `8700e156-6ce9-509
     ],
     "object_marking_refs": [
         "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-        "<IMPORTED MARKING DEFINITION OBJECT>"
+        "marking-definition--8700e156-6ce9-5090-8589-f9d0aef7bdb7"
     ]
 }
 ```
@@ -166,7 +166,7 @@ To generate the id, a UUIDv5 is generated using the namespace `8700e156-6ce9-509
     "type": "x-mitre-tactic",
     "spec_version": "2.1",
     "id": "x-mitre-tactic--<UUID V5>",
-    "created_by_ref": "<IMPORTED IDENTITY OBJECT>",
+    "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
     "created": "<DATE IN DISARM_VERSION FILE>",
     "modified": "<DATE IN DISARM_VERSION FILE>",
     "name": "<name>",
@@ -180,7 +180,7 @@ To generate the id, a UUIDv5 is generated using the namespace `8700e156-6ce9-509
     ],
     "object_marking_refs": [
         "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-        "<IMPORTED MARKING DEFINTION OBJECTS>"
+        "marking-definition--8700e156-6ce9-5090-8589-f9d0aef7bdb7"
     ],
     "x_mitre_shortname": "<machine friendly name>"
 }
@@ -197,7 +197,7 @@ e.g. `TA05` = `10ccaa61-bf44-56ec-b1a7-3fc01942ec6d` = `x-mitre-tactic--10ccaa61
     "type": "attack-pattern",
     "spec_version": "2.1",
     "id": "attack-pattern--<UUID V5>",
-    "created_by_ref": "<IMPORTED IDENTITY OBJECT>",
+    "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
     "created": "<DATE IN DISARM_VERSION FILE>",
     "modified": "<DATE IN DISARM_VERSION FILE>",
     "name": "<name>",
@@ -224,7 +224,7 @@ e.g. `TA05` = `10ccaa61-bf44-56ec-b1a7-3fc01942ec6d` = `x-mitre-tactic--10ccaa61
     "x_mitre_version": "2.1",
     "object_marking_refs": [
         "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-        "<IMPORTED MARKING DEFINTION OBJECTS>"
+        "marking-definition--8700e156-6ce9-5090-8589-f9d0aef7bdb7"
     ]
 }
 ```
@@ -246,7 +246,7 @@ You can identify a subtechnique if the techniques `attack-pattern` object has a 
     "type": "relationship",
     "spec_version": "2.1",
     "id": "relationship--<UUIDV5 GENERATION LOGIC>",
-    "created_by_ref": "<IMPORTED IDENTITY OBJECT>",
+    "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
     "created": "<CREATED TIME OF MOST RECENT DISARM OBJECT IN PAIR>",
     "modified": "<CREATED TIME OF MOST RECENT DISARM OBJECT IN PAIR>",
     "relationship_type": "subtechnique-of",
@@ -254,7 +254,7 @@ You can identify a subtechnique if the techniques `attack-pattern` object has a 
     "target_ref": "attack-pattern--<PARENT OBJECT>",
     "object_marking_refs": [
         "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-        "<IMPORTED MARKING DEFINTION OBJECTS>"
+        "marking-definition--8700e156-6ce9-5090-8589-f9d0aef7bdb7"
     ],
 }
 ```
