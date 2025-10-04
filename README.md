@@ -4,11 +4,15 @@ A command line tool that turns the DISARM framework into STIX 2.1 Objects.
 
 ## Before you begin
 
-We host a full web API that includes all objects created by location2stix, [CTIButler](https://www.ctibutler.com/).
+![](docs/ctibutler.png)
+
+We host a full web API that includes all objects created by disarm2stix, [CTIButler](https://www.ctibutler.com/).
 
 ## Overview
 
-![](docs/disarm2stix.png)
+![](docs/disarm2stix.jpg)
+
+[Source](https://miro.com/app/board/uXjVKpP-IGw=/?share_link_id=561813119363)
 
 The [DISARM Framework](https://www.disarm.foundation/framework) in parts aims to provide a single knowledge-base for disinformation classifications.
 
@@ -76,10 +80,6 @@ disarm2stix converts the corresponding DISARM object into the following STIX 2.1
 This conversion (especially the STIX custom objects `x-`) is heavily inspired by MITRE ATT&CK STIX 2.1 Objects (see note on ATT&CK navigator).
 
 Note, this code only considers the DISARM Red Framework at present.
-
-You can see the high level structure of how the STIX objects are linked together here:
-
-https://miro.com/app/board/uXjVKpP-IGw=/?share_link_id=561813119363
 
 ### Marking Definition / Identity
 
