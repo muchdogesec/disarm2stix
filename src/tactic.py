@@ -22,6 +22,7 @@ valid_tactics = [
     "establish-legitimacy",  # TA16
     "maximise-exposure",  # TA17
     "drive-online-harms",  # TA18
+    "establish-social-assets", # TA15 (legacy)
 ]
 
 
